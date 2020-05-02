@@ -136,9 +136,7 @@
 </template>
 
 <script lang="ts">
-import { inject } from 'vue'
 import { useMousePosition } from '@/actions/mouse'
-import StoreKey from '@/store/store-keys'
 
 export default {
   name: 'HelloWorld',
@@ -146,8 +144,7 @@ export default {
     msg: String
   },
   setup() {
-    const useCount = inject(StoreKey)
-    return { ...useMousePosition(), ...useCount }
+    return { ...useMousePosition() }
   }
 }
 </script>

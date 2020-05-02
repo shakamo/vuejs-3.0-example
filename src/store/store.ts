@@ -1,18 +1,14 @@
-import { reactive, computed } from 'vue'
+import { reactive } from 'vue'
 
 export const useCount = () => {
-  const xy = reactive({ count: 0 })
-
-  const count = computed(() => {
-    return { count: xy.count }
-  })
+  const store = reactive({ count: 0 })
 
   const increment = () => {
-    xy.count++
+    store.count++
   }
 
   return {
-    count,
+    store,
     increment
   }
 }

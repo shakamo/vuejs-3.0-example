@@ -135,9 +135,9 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { createApp } from 'vue'
 
-export default Vue.extend({
+export default createApp({
   name: 'HelloWorld',
   props: {
     msg: String

@@ -1,12 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <Provider>
+      <div id="nav">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link>
+      </div>
+      <router-view />
+    </Provider>
   </div>
 </template>
+
+<script lang="ts">
+import Provider from '@/components/Provider.vue'
+
+export default {
+  components: { Provider }
+}
+</script>
 
 <style lang="scss">
 #app {

@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <button @click="increment">increment {{ count }}</button>
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
@@ -8,7 +9,7 @@
         >vue-cli documentation</a
       >.
     </p>
-    <h3>Installed CLI Plugins</h3>
+    <h3>Installed CLI Plugins {{ value }}</h3>
     <ul>
       <li>
         <a
@@ -135,14 +136,20 @@
 </template>
 
 <script lang="ts">
-import { createApp } from 'vue'
+import { inject } from 'vue'
+import { useMousePosition } from '@/actions/mouse'
+import StoreKey from '@/store/store-keys'
 
-export default createApp({
+export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  setup() {
+    const useCount = inject(StoreKey)
+    return { ...useMousePosition(), ...useCount }
   }
-})
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

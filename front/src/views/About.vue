@@ -15,6 +15,7 @@ export default {
     msg: String
   },
   setup() {
+    // こんな感じでStoreを直接呼び出すのは禁止にする
     const useCount = inject(StoreKey)
     return { ...useCount }
   }

@@ -1,24 +1,30 @@
 <template>
   <div id="app">
-    <Provider>
-      <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
-      </div>
-      <router-view />
-    </Provider>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view />
   </div>
 </template>
 
 <script lang="ts">
-import Provider from '@/components/Provider.vue'
+import { provide } from 'vue'
+import { useCount } from '@/store/store'
+import { StoreKey } from '@/store/storeKeys'
 
 export default {
-  components: { Provider }
+  setup() {
+    provide(StoreKey, useCount())
+
+    return {}
+  }
 }
 </script>
 
 <style lang="scss">
+@import 'tiny-slider/src/tiny-slider';
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

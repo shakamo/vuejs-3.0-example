@@ -1,7 +1,25 @@
 <template>
   <div class="hello">
+    <div id="map" style="height:300px;" />
     <button @click="increment">increment {{ count }}</button>
     <h1>{{ msg }}</h1>
+
+    <tiny-slider :mouse-drag="true" :loop="false" items="2" gutter="20">
+      <div>Slider item #1</div>
+      <div>Slider item #2</div>
+      <div>Slider item #3</div>
+      <div>Slider item #4</div>
+      <div>Slider item #5</div>
+      <div>Slider item #6</div>
+    </tiny-slider>
+    <carousel>
+      <slide>
+        Slide 1 Content
+      </slide>
+      <slide>
+        Slide 2 Content
+      </slide>
+    </carousel>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -137,9 +155,16 @@
 
 <script lang="ts">
 import { useMousePosition } from '@/actions/mouse'
+import VueTinySlider from 'vue-tiny-slider'
+import { Carousel, Slide } from 'vue-carousel'
 
 export default {
   name: 'HelloWorld',
+  components: {
+    TinySlider: VueTinySlider,
+    Carousel,
+    Slide
+  },
   props: {
     msg: String
   },

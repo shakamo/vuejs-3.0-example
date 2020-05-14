@@ -26,7 +26,7 @@ export const useMousePosition = () => {
       /* todo */
     }
     const loader = new Loader(
-      'AIzaSyASUQY0k6M6Vd12qZ6K2Xwmi177n8kHL4Q',
+      'AIzaSyBYhiJvs7C3BAykepRiRvkSScvYcsGaTDw',
       options
     )
 

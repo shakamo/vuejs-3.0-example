@@ -1,5 +1,10 @@
 import Vue, { VNode } from 'vue'
 
+interface BulmaCarousel {
+  attach(selector: string, options: object): void
+  dettach(selector: string): void
+}
+
 declare global {
   namespace JSX {
     // tslint:disable no-empty-interface
@@ -9,5 +14,9 @@ declare global {
     interface IntrinsicElements {
       // [elem: string]: any
     }
+  }
+
+  interface Window {
+    bulmaCarousel: BulmaCarousel
   }
 }

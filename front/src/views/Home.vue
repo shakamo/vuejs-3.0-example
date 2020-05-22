@@ -23,7 +23,7 @@ export default {
 </script>
 <style scoped lang="scss">
 #map {
-  height: calc(100vh - 300px);
+  height: calc(100vh - 400px);
 }
 .wrapper {
   min-height: 100vh;
